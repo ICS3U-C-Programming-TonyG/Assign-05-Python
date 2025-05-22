@@ -1,13 +1,14 @@
 def encrypt_text(plaintext, n):
     ans = ""
-    for i in range(len(plaintext)):
-        ch = plaintext[i]
+    for ch in plaintext:
         if ch == " ":
             ans += " "
         elif ch.isupper():
             ans += chr((ord(ch) + n - 65) % 26 + 65)
-        else:
+        elif ch.islower():
             ans += chr((ord(ch) + n - 97) % 26 + 97)
+        else:
+            ans += ch  # Leave non-letters unchanged
     return ans
 
 plaintext = input("Write your message: ")
