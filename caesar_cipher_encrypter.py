@@ -9,12 +9,13 @@
 def encrypt_text(plaintext, n):
     ans_list = []
     for ch in plaintext:
-        # Compound Boolean and nested if
+        # Compound Boolean and nested if isalpha and isdigit learned from https://www.w3schools.com/python/ref_string_isalpha.asp and https://www.w3schools.com/python/ref_string_isdigit.asp
         if (ch.isalpha() and not ch.isdigit()) or ch == " ":
             if ch == " ":
                 ans_list.append(" ")
             else:
                 if ch.isupper():
+        # Ord and chr learned from W3schools https://www.w3schools.com/python/ref_func_ord.asp and https://www.w3schools.com/python/ref_func_chr.asp
                     ans_list.append(chr((ord(ch) + n - 65) % 26 + 65))
                 else:
                     ans_list.append(chr((ord(ch) + n - 97) % 26 + 97))
