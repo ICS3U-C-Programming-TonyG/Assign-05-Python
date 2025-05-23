@@ -6,6 +6,7 @@
 
 # Caesar Cipher Encrypter.
 
+
 def encrypt_text(plaintext, n):
     ans_list = []
     for ch in plaintext:
@@ -15,7 +16,7 @@ def encrypt_text(plaintext, n):
                 ans_list.append(" ")
             else:
                 if ch.isupper():
-        # Ord and chr learned from W3schools https://www.w3schools.com/python/ref_func_ord.asp and https://www.w3schools.com/python/ref_func_chr.asp
+                    # Ord and chr learned from W3schools https://www.w3schools.com/python/ref_func_ord.asp and https://www.w3schools.com/python/ref_func_chr.asp
                     ans_list.append(chr((ord(ch) + n - 65) % 26 + 65))
                 else:
                     ans_list.append(chr((ord(ch) + n - 97) % 26 + 97))
@@ -28,6 +29,7 @@ def encrypt_text(plaintext, n):
         ans += ans_list[idx]
         idx += 1
     return ans
+
 
 # Use the function with user input
 plaintext = input("Write your message: ")
