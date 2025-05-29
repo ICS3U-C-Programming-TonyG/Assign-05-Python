@@ -33,7 +33,10 @@ def encrypt_text(plaintext, n):
 
 # Use the function with user input
 plaintext = input("Write your message: ")
-n = int(input("What order of magnitude? "))
-print("Plain Text is : " + plaintext)
-print("Shift pattern is : " + str(n))
-print("Cipher Text is : " + encrypt_text(plaintext, n))
+try:
+    n = int(input("What order of magnitude? "))
+    print("Plain Text is : " + plaintext)
+    print("Shift pattern is : " + str(n))
+    print("Cipher Text is : " + encrypt_text(plaintext, n))
+except ValueError:
+    print("Error: Please enter a valid integer for the shift value.")
